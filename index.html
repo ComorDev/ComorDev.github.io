@@ -1,427 +1,434 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ComorDev</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.4s, color 0.4s;
-        }
-        .gradient-text {
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: #00C6FF;
-        }
-        .card-glow {
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
-        }
-        body.light {
-            background-color: #f9fafb;
-            color: #111827;
-        }
-        body.light a:hover {
-            color: #0ea5e9;
-        }
-        nav ul li a {
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComorDev — Портфолио</title>
+
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-950 text-white">
+<body>
 
-<header class="p-6 flex justify-between items-center border-b border-gray-800 backdrop-blur sticky top-0 z-50 bg-opacity-90 bg-gray-900">
-    <h1 class="text-2xl font-bold gradient-text" id="header-title">ComorDev</h1>
-    <nav>
-        <ul class="flex gap-6 text-sm items-center">
-            <li>
-                <button id="lang-toggle" title="Переключить язык" class="px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-700 transition">
-                    EN
-                </button>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-<section class="text-center py-24 px-4" id="about">
-    <h2 class="text-5xl font-extrabold mb-4 gradient-text" data-key="greeting"></h2>
-    <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed" data-key="description">
-    </p>
-</section>
-
-<section class="bg-gray-900 py-20 px-4" id="experience">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center" data-key="experience_title"></h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                <h3 class="text-2xl font-semibold mb-3" data-key="exp_freelance_title"></h3>
-                <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_freelance_text"></p>
+    <header class="header">
+        <div class="header__container">
+            <div class="logo">
+                <a href="#" class="logo__link">Comor<span class="logo__accent">Dev</span></a>
             </div>
-            <a href="https://t.me/MoneyHand_bot" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_moneyhand_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_moneyhand_text"></p>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#about" class="nav__link">Обо мне</a></li>
+                    <li class="nav__item"><a href="#project" class="nav__link">Проект</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link">Опыт</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Проекты</a></li>
+                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <div class="lang-switcher">
+                    <span class="lang-switcher__item active">RU</span>
+                    <span class="lang-switcher__divider">/</span>
+                    <span class="lang-switcher__item">EN (недоступно)</span>
                 </div>
-            </a>
-            <a href="https://ameoli.ru" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_ameoli_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_ameoli_text"></p>
-                </div>
-            </a>
-            <a href="https://psyonclinic.ru" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_psyon_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_psyon_text"></p>
-                </div>
-            </a>
-            <a href="https://sirpuer.com" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_puer_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_puer_text"></p>
-                </div>
-            </a>
-            <a href="https://beautyagent.store" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_beauty_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_beauty_text"></p>
-                </div>
-            </a>
-            <a href="https://leelo.ru" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_leelo_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_leelo_text"></p>
-                </div>
-            </a>
-            <a href="https://vbbank.ru" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_vbbank_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_vbbank_text"></p>
-                </div>
-            </a>
-            <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                <h3 class="text-2xl font-semibold mb-3" data-key="exp_checker_title"></h3>
-                <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_checker_text"></p>
-            </div>
-            <a href="https://acnews.info" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_acnews_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_acnews_text"></p>
-                </div>
-            </a>
-            <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                <h3 class="text-2xl font-semibold mb-3" data-key="exp_invest_title"></h3>
-                <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_invest_text"></p>
-            </div>
-            <a href="https://qrzebra.uz" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_zebra_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_zebra_text"></p>
-                </div>
-            </a>
-            <a href="https://facilemonde.ru" target="_blank">
-                <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                    <h3 class="text-2xl font-semibold mb-3 text-cyan-400" data-key="exp_facile_title"></h3>
-                    <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_facile_text"></p>
-                </div>
-            </a>
-            <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                <h3 class="text-2xl font-semibold mb-3" data-key="exp_xenforo_title"></h3>
-                <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_xenforo_text"></p>
-            </div>
-            <div class="bg-gray-800 rounded-3xl p-6 card-glow hover:scale-[1.03] transition">
-                <h3 class="text-2xl font-semibold mb-3" data-key="exp_themoloko_title"></h3>
-                <p class="text-gray-300 text-sm leading-relaxed" data-key="exp_themoloko_text"></p>
             </div>
         </div>
-    </div>
-</section>
+    </header>
 
-<section class="py-20 px-4" id="projects">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold mb-12 text-center" data-key="projects_title"></h2>
-        <div class="grid md:grid-cols-2 gap-10">
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 shadow-lg">
-                <h3 class="text-2xl font-semibold mb-2" data-key="proj_bedwars_title"></h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-key="proj_bedwars_text">
+    <main class="main-content">
+
+        <section class="hero-section">
+            <div class="hero-section__container">
+                <div class="hero-section__content">
+                    <span class="software-engineer-badge">SOFTWARE ENGINEER</span>
+                    <h1 class="hero-section__title">
+                        Строю продукты,
+                        <span class="text-gradient">решающие задачи бизнесов</span>
+                    </h1>
+                    <p class="hero-section__description">
+                        Разрабатываю масштабируемые системы, микросервисы и AI-решения.
+                        Сейчас работаю над собственным SaaS-продуктом <span class="text-cyan-link">EveningCity</span>
+                        — CRM для управления коммуникациями из всех мессенджеров в одном окне.
+                    </p>
+                    <div class="hero-section__actions">
+                        <a href="#project" class="btn btn--primary">Посмотреть проект &rarr;</a>
+                        <a href="#about" class="btn">Обо мне</a>
+                    </div>
+                </div>
+
+                <div class="hero-section__visual">
+                    <div class="mockup-perspective">
+                        <img src="assets/images/eveningcity_interface.png" alt="EveningCity Interface" class="mockup-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project" class="featured-project-section">
+            <div class="featured-project-section__container">
+                <div class="project-card-main">
+                    <div class="project-card-main__info">
+                        <span class="section-label">Мой проект</span>
+                        <div class="project-card-main__title-row">
+                            <h2 class="project-card-main__title">EveningCity</h2>
+                            <span class="status-badge">In Progress</span>
+                        </div>
+                        <p class="project-card-main__description">
+                            Омниканальная CRM-система для бизнеса, которая объединяет Telegram, WhatsApp и другие каналы коммуникации в едином интерфейсе.
+                        </p>
+                        <div class="tech-tags" id="tech">
+                            <div class="tech-tag">
+                                <span class="tech-tag__icon tech-tag__icon--go"></span>
+                                <div class="tech-tag__text">
+                                    <span class="tech-tag__name">Go</span>
+                                    <span class="tech-tag__sub">Backend</span>
+                                </div>
+                            </div>
+                            <div class="tech-tag">
+                                <span class="tech-tag__icon tech-tag__icon--react"></span>
+                                <div class="tech-tag__text">
+                                    <span class="tech-tag__name">React</span>
+                                    <span class="tech-tag__sub">Frontend</span>
+                                </div>
+                            </div>
+                            <div class="tech-tag tech-tag--architecture">
+                                <span class="tech-tag__icon tech-tag__icon--microservices"></span>
+                                <div class="tech-tag__text">
+                                    <span class="tech-tag__name">Микросервисная</span>
+                                    <span class="tech-tag__sub">архитектура</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card-main__links">
+                            <a href="https://eveningcity.com" class="link-arrow">Подробнее о проекте <span class="link-arrow__icon">&rarr;</span></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card-main__diagram">
+                        <div class="diagram-column diagram-column--channels">
+                            <span class="diagram-column__title">Каналы</span>
+                            <div class="diagram-icon diagram-icon--telegram"></div>
+                            <div class="diagram-icon diagram-icon--whatsapp"></div>
+                            <div class="diagram-icon diagram-icon--viber"></div>
+                            <div class="diagram-dots">...</div>
+                        </div>
+
+                        <div class="diagram-arrows-left"></div>
+
+                        <div class="diagram-column diagram-column--platform">
+                            <span class="diagram-column__title">EveningCity Platform</span>
+                            <div class="diagram-block diagram-block--gateway">API Gateway</div>
+                            <div class="diagram-row">
+                                <div class="diagram-block diagram-block--sub">Auth Service</div>
+                                <div class="diagram-block diagram-block--sub">Audit Service</div>
+                            </div>
+                            <div class="diagram-row">
+                                <div class="diagram-block diagram-block--sub">User Service</div>
+                                <div class="diagram-block diagram-block--sub">Message Service</div>
+                            </div>
+                            <div class="diagram-row">
+                                <div class="diagram-block diagram-block--sub">Analytics Service</div>
+                            </div>
+                            <div class="diagram-block diagram-block--storage">Storage</div>
+                        </div>
+
+                        <div class="diagram-arrows-right"></div>
+
+                        <div class="diagram-column diagram-column--clients">
+                            <span class="diagram-column__title">Клиенты</span>
+                            <div class="diagram-client-item">
+                                <span class="diagram-client-icon diagram-client-icon--web"></span>
+                                <span class="diagram-client-text">Web</span>
+                            </div>
+                            <div class="diagram-client-item">
+                                <span class="diagram-client-icon diagram-client-icon--mobile"></span>
+                                <span class="diagram-client-text">Mobile</span>
+                            </div>
+                            <div class="diagram-dots">...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="history-section">
+            <div class="history-section__container">
+                <div class="history-section__content">
+                    <span class="section-label">Моя история</span>
+                    <h2 class="history-section__title">Путь длиною<br><span class="text-cyan">в код</span></h2>
+                    <div class="history-section__text">
+                        <p>Я начал программировать в 11 лет.</p>
+                        <p>Всё началось в Minecraft: я хотел играть с читами, притворяясь игроком ПК, но у меня не было компьютера. Любопытство привело меня к изучению плагинов, а затем — к созданию собственных. Я начал продавать их владельцам серверов.</p>
+                        <p>Так хобби превратилось в дело жизни.</p>
+                    </div>
+                </div>
+                <div class="history-section__illustration">
+                </div>
+            </div>
+        </section>
+
+        <section class="focus-section">
+            <div class="focus-section__container">
+                <h2 class="focus-section__title">Чем я занимаюсь сейчас</h2>
+                <div class="focus-grid">
+                    <div class="focus-card">
+                        <div class="focus-card__icon focus-card__icon--crm"></div>
+                        <p class="focus-card__text">Разрабатываю EveningCity — CRM на Go и React</p>
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-card__icon focus-card__icon--arch"></div>
+                        <p class="focus-card__text">Проектирую микросервисную архитектуру</p>
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-card__icon focus-card__icon--ai"></div>
+                        <p class="focus-card__text">Интегрирую AI и создаю умные автоматизации</p>
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-card__icon focus-card__icon--sys"></div>
+                        <p class="focus-card__text">Создаю системы, которые экономят время и увеличивают прибыль</p>
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-card__icon focus-card__icon--launch"></div>
+                        <p class="focus-card__text">Готовлю продукт к коммерческому запуску</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="timeline-section">
+            <div class="timeline-section__container">
+                <span class="section-label">Опыт</span>
+                <div class="timeline">
+                    <div class="timeline__line"></div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <span class="timeline__year">2018</span>
+                        <h3 class="timeline__title">Начало пути</h3>
+                        <p class="timeline__description">Знакомство с программированием через Minecraft. Изучил устройство серверов, писал и продавал собственные плагины с целью создавать полезные продукты.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <span class="timeline__year">2021</span>
+                        <h3 class="timeline__title">Первый коммерческий опыт</h3>
+                        <p class="timeline__description">Успешно сдал фриланс-заказ на незнакомом фреймворке, работая только с ТЗ и документацией. Закрепил навык быстрого освоения технологий.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <span class="timeline__year">2022–2024</span>
+                        <h3 class="timeline__title">Годы практики</h3>
+                        <p class="timeline__description">Коммерческая разработка в разных сферах. Частая смена требований сформировала принцип: уметь находить решения за пределами привычного стека.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <span class="timeline__year">2025</span>
+                        <h3 class="timeline__title">Переломный момент</h3>
+                        <p class="timeline__description">Старт совместного продукта, завершившийся уходом партнера. Принял решение строить проект самостоятельно, полностью отвечая за архитектуру.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <span class="timeline__year">Сейчас</span>
+                        <h3 class="timeline__title">EveningCity</h3>
+                        <p class="timeline__description">Фокус на омниканальной CRM-платформе с микросервисной архитектурой. Идёт подготовка к коммерческому запуску и привлечению первых клиентов.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="projects-section__container">
+                <span class="section-label">Проекты</span>
+
+                <div class="projects-layout">
+                    <div class="projects-featured">
+
+                        <div class="project-card">
+                            <div class="project-card__preview img-placeholder-dmm"></div>
+                            <div class="project-card__content">
+                                <h3 class="project-card__title">DMM</h3>
+                                <p class="project-card__meta">Decompiler Minecraft Mods</p>
+                                <p class="project-card__tech">C++ / Reverse Engineering / Binary</p>
+                                <p class="project-card__desc">Инструмент для декомпиляции обфусцированных модов. Перевод имен переменных и функций в читаемый вид через маппинги.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-card__preview img-placeholder-mywast"></div>
+                            <div class="project-card__content">
+                                <h3 class="project-card__title">MyWast Network</h3>
+                                <p class="project-card__meta">Кастомное ядро сервера (1.1.5)</p>
+                                <p class="project-card__tech">PHP / Java / Game Logic</p>
+                                <p class="project-card__desc">Реализация эксклюзивной системы стриминга музыки из интернета в клиент игры и авторских horror-механик.</p>
+                                <a href="https://vk.com/mywast" class="project-card__link">Подробнее &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-card__preview img-placeholder-moneyhand"></div>
+                            <div class="project-card__content">
+                                <h3 class="project-card__title">MoneyHand</h3>
+                                <p class="project-card__meta">Криптообменник</p>
+                                <p class="project-card__tech">Laravel / CoinBase API / Telegram Bot</p>
+                                <p class="project-card__desc">Автоматизированная платформа для обмена криптовалют с интеграцией платежных шлюзов и Telegram-интерфейсом для управления сделками.</p>
+                                <a href="https://t.me/MoneyHand_bot" target="_blank" class="project-card__link">Перейти &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card-more">
+                            <div class="project-card-more__icon"></div>
+                            <div class="project-card-more__content">
+                                <h3 class="project-card-more__title">Коммерческий опыт</h3>
+                                <p class="project-card-more__text">Десятки реализованных проектов: интернет-магазины, CRM, API-интеграции и боты.</p>
+                                <button id="open-projects-widget" class="btn btn--secondary btn--full-width">Посмотреть все проекты (15+)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="all-projects-widget" id="projects-widget">
+                    <div class="all-projects-widget__header">
+                        <h3 class="all-projects-widget__title">Опыт и проекты</h3>
+                        <button class="all-projects-widget__close" id="close-projects-widget" aria-label="Закрыть">&times;</button>
+                    </div>
+                    <div class="all-projects-grid">
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://t.me/MoneyHand_bot" target="_blank" class="all-projects-item__link-inline">MoneyHand ↗</a></h4>
+                            <span class="all-projects-item__type">Криптообменник (Laravel + CoinBase)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://ameoli.ru" target="_blank" class="all-projects-item__link-inline">Ameoli ↗</a></h4>
+                            <span class="all-projects-item__type">ИТ в медицине (Bitrix + REST API)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://psyonclinic.ru" target="_blank" class="all-projects-item__link-inline">Psyon Clinic ↗</a></h4>
+                            <span class="all-projects-item__type">Сайт клиники (Laravel + Т-Банк)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://sirpuer.com" target="_blank" class="all-projects-item__link-inline">SirPuer ↗</a></h4>
+                            <span class="all-projects-item__type">Интернет-магазин чая (OpenCart)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://beautyagent.store" target="_blank" class="all-projects-item__link-inline">Beauty Agent ↗</a></h4>
+                            <span class="all-projects-item__type">Премиальная косметика (OpenCart)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://leelo.ru" target="_blank" class="all-projects-item__link-inline">Leelo ↗</a></h4>
+                            <span class="all-projects-item__type">Онлайн-биржа (PHP + MySQL)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://vbbank.ru" target="_blank" class="all-projects-item__link-inline">VB Bank ↗</a></h4>
+                            <span class="all-projects-item__type">Финансовый сервис</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://acnews.info" target="_blank" class="all-projects-item__link-inline">ACNews ↗</a></h4>
+                            <span class="all-projects-item__type">Новостной сайт (1С-Битрикс)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://qrzebra.uz" target="_blank" class="all-projects-item__link-inline">QR Zebra ↗</a></h4>
+                            <span class="all-projects-item__type">Онлайн-меню для ресторанов</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name"><a href="https://facilemonde.ru" target="_blank" class="all-projects-item__link-inline">Facile Monde ↗</a></h4>
+                            <span class="all-projects-item__type">Российская косметика</span>
+                        </div>
+
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name all-projects-item__name--plain">Checker</h4>
+                            <span class="all-projects-item__type">Анализ товаров (Yii2)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name all-projects-item__name--plain">Invest</h4>
+                            <span class="all-projects-item__type">Инвестиционный портал (Laravel/Yii2)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name all-projects-item__name--plain">TheMoloko</h4>
+                            <span class="all-projects-item__type">Сайт знакомств (Laravel + GD2)</span>
+                        </div>
+                        <div class="all-projects-item">
+                            <h4 class="all-projects-item__name all-projects-item__name--plain">Парсер XenForo</h4>
+                            <span class="all-projects-item__type">Интеграция с Telegram (PHP + Bot API)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget-overlay" id="widget-overlay"></div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-section__container">
+                <div class="cta-card">
+                    <div class="cta-card__info">
+                        <h2 class="cta-card__title">Давайте создадим что-то крутое</h2>
+                        <p class="cta-card__subtitle">Открыт к интересным проектам и партнёрствам</p>
+                    </div>
+                    <a href="#contacts" class="btn btn--primary btn--cta">Связаться со мной &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts-section">
+            <div class="contacts-container">
+                <span class="section-label">Связь со мной</span>
+                <h2 class="section-title">Давайте обсудим проект</h2>
+
+                <div class="contacts-socials">
+                    <a href="https://t.me/comordev" target="_blank" class="social-link" title="Telegram">
+                        <svg viewBox="0 0 240 240" width="40" height="40"><defs><linearGradient id="tg-grad" x1="120" y1="240" x2="120" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d93d2"/><stop offset="1" stop-color="#38b0e3"/></linearGradient></defs><circle cx="120" cy="120" r="120" fill="url(#tg-grad)"/><path d="M81.229,128.772l14.237,39.406s1.78,3.687,3.686,3.687,30.255-29.492,30.255-29.492l31.525-60.89L81.737,118.6Z" fill="#c8daea"/><path d="M100.106,138.878l-2.733,29.046s-1.144,8.9,7.754,0,17.415-15.763,17.415-15.763" fill="#a9c6d8"/><path d="M81.486,130.178,52.2,120.636s-3.5-1.42-2.373-4.64c.232-.664.7-1.229,2.1-2.2,6.489-4.523,120.106-45.36,120.106-45.36s3.208-1.081,5.1-.362a2.766,2.766,0,0,1,1.885,2.055,9.357,9.357,0,0,1,.254,2.585c-.009.752-.1,1.449-.169,2.542-.692,11.165-21.4,94.493-21.4,94.493s-1.239,4.876-5.678,5.043A8.13,8.13,0,0,1,146.1,172.5c-8.711-7.493-38.819-27.727-45.472-32.177a1.27,1.27,0,0,1-.546-.9c-.093-.469.417-1.05.417-1.05s52.426-46.6,53.821-51.492c.108-.379-.3-.566-.848-.4-3.482,1.281-63.844,39.4-70.506,43.607A3.21,3.21,0,0,1,81.486,130.178Z" fill="#fff"/></svg>
+                    </a>
+
+                    <a href="https://vk.com/quellmerens" target="_blank" class="social-link" title="VK">
+                        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 23.04C0 12.1788 0 6.74826 3.37413 3.37413C6.74826 0 12.1788 0 23.04 0H24.96C35.8212 0 41.2517 0 44.6259 3.37413C48 6.74826 48 12.1788 48 23.04V24.96C48 35.8212 48 41.2517 44.6259 44.6259C41.2517 48 35.8212 48 24.96 48H23.04C12.1788 48 6.74826 48 3.37413 44.6259C0 41.2517 0 35.8212 0 24.96V23.04Z" fill="#0077FF"/>
+                            <path d="M25.54 34.5801C14.6 34.5801 8.3601 27.0801 8.1001 14.6001H13.5801C13.7601 23.7601 17.8 27.6401 21 28.4401V14.6001H26.1602V22.5001C29.3202 22.1601 32.6398 18.5601 33.7598 14.6001H38.9199C38.0599 19.4801 34.4599 23.0801 31.8999 24.5601C34.4599 25.7601 38.5601 28.9001 40.1201 34.5801H34.4399C33.2199 30.7801 30.1802 27.8401 26.1602 27.4401V34.5801H25.54Z" fill="white"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/ComorDev" target="_blank" class="social-link" title="GitHub">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="white"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand-side">
+                <div class="logo">
+                    <a href="#" class="logo__link">Comor<span class="logo__accent">Dev</span></a>
+                </div>
+                <p class="footer__copyright">
+                    &copy; 2026 Василий Фирсов. Все права защищены.
                 </p>
             </div>
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 shadow-lg">
-                <h3 class="text-2xl font-semibold mb-2" data-key="proj_inventory_title"></h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-key="proj_inventory_text">
-                </p>
+
+            <div class="footer__nav-columns">
+                <div class="footer-col">
+                    <h4 class="footer-col__title">Навигация</h4>
+                    <ul class="footer-col__list">
+                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#project">Проект</a></li>
+                        <li><a href="#experience">Опыт</a></li>
+                        <li><a href="#projects">Проекты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col__title">Контакты</h4>
+                    <ul class="footer-col__list">
+                        <li><a href="https://t.me/comordev">Telegram</a></li>
+                        <li><a href="mailto:comordev@gmail.com">Email</a></li>
+                        <li><a href="https://github.com/ComorDev">GitHub</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 shadow-lg">
-    <a href="https://github.com/ComorDev/FastBracketCheck" target="_blank">
-        <h3 class="text-2xl font-semibold mb-2 text-cyan-400 hover:text-cyan-300 transition" data-key="proj_bracket_title">
-        </h3>
-    </a>
-    <p class="text-gray-400 text-sm leading-relaxed"  data-key="proj_bracket_text">
-                <br />
-    </p>
-    <span class="text-cyan-400">GitHub:</span>
-        <a href="https://github.com/ComorDev/FastBracketCheck" class="underline hover:text-cyan-300" target="_blank">
-            github.com/ComorDev/FastBracketCheck
-        </a>
-</div>
-
-
-
-<div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 shadow-lg">
-    <a href="https://github.com/ComorDev/LaravelQuickCRUD" target="_blank">
-        <h3 class="text-2xl font-semibold mb-2 text-cyan-400 hover:text-cyan-300 transition" data-key="proj_crud_title">
-        </h3>
-    </a>
-    <p class="text-gray-400 text-sm leading-relaxed"  data-key="proj_crud_text">
-                <br />
-    </p>
-    <span class="text-cyan-400">GitHub:</span>
-        <a href="https://github.com/ComorDev/LaravelQuickCRUD" class="underline hover:text-cyan-300" target="_blank">
-            github.com/ComorDev/LaravelQuickCRUD
-        </a>
-</div>
-
-<div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 shadow-lg">
-    
-        <h3 class="text-2xl font-semibold mb-2 transition" data-key="proj_dmm_title">
-        </h3>
-    <p class="text-gray-400 text-sm leading-relaxed"  data-key="proj_dmm_text">
-                <br />
-    </p>
-</div>
-
-<div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-6 shadow-lg">
-    <a href="https://vk.com/mywast" target="_blank">
-        <h3 class="text-2xl font-semibold mb-2 text-cyan-400 hover:text-cyan-300 transition" data-key="proj_mywast_title">
-        </h3>
-    </a>
-    <p class="text-gray-400 text-sm leading-relaxed"  data-key="proj_mywast_text">
-                <br />
-    </p>
-    <span class="text-cyan-400">VK:</span>
-        <a href="https://vk.com/mywast" class="underline hover:text-cyan-300" target="_blank">
-            vk.com/MyWast
-        </a>
-</div>
-
         </div>
-    </div>
-</section>
+    </footer>
 
-
-<section class="py-16 px-4 bg-gray-900 text-center" id="socials">
-    <h2 class="text-3xl font-bold mb-8 gradient-text" data-key="socials_title"></h2>
-    <div class="flex justify-center gap-10 text-cyan-400 text-3xl">
-        <a href="https://t.me/comordev" target="_blank" aria-label="Telegram" class="hover:text-cyan-600 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
-                <path d="M9.035 16.272l-.374 5.58c.535 0 .77-.23 1.045-.505l2.51-2.4 5.197 3.808c.953.526 1.632.25 1.882-.89L22 4.47c.27-1.344-.48-1.874-1.357-1.544L2.58 10.3c-1.317.517-1.308 1.25-.228 1.58l5.96 1.858 13.838-8.704" />
-            </svg>
-        </a>
-        <a href="https://github.com/ComorDev" target="_blank" aria-label="GitHub" class="hover:text-cyan-600 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-8 h-8">
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.41 2.865 8.15 6.839 9.48.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.343-3.369-1.343-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.607.069-.607 1.004.07 1.532 1.03 1.532 1.03.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.252-4.555-1.112-4.555-4.945 0-1.091.39-1.984 1.029-2.682-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.58 9.58 0 0112 6.844c.85.004 1.705.115 2.504.338 1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.203 2.394.1 2.647.64.698 1.028 1.591 1.028 2.682 0 3.842-2.337 4.69-4.566 4.936.36.31.68.923.68 1.86 0 1.343-.012 2.425-.012 2.756 0 .268.18.58.688.481A10.007 10.007 0 0022 12c0-5.52-4.48-10-10-10z"/>
-            </svg>
-        </a>
-        <a href="https://vk.com/quellmerens" target="_blank" aria-label="VK" class="hover:text-cyan-600 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256" class="w-8 h-8">
-                <g fill="#20d3ee" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M24,4h-18c-1.105,0 -2,0.895 -2,2v18c0,1.105 0.895,2 2,2h18c1.105,0 2,-0.895 2,-2v-18c0,-1.105 -0.895,-2 -2,-2zM21.361,18.967l-1.868,0.026c0,0 -0.403,0.079 -0.93,-0.285c-0.699,-0.48 -1.358,-1.729 -1.872,-1.567c-0.521,0.166 -0.505,1.29 -0.505,1.29c0,0 0.004,0.198 -0.115,0.327c-0.129,0.139 -0.382,0.125 -0.382,0.125h-0.837c0,0 -1.846,0.153 -3.473,-1.543c-1.772,-1.849 -3.338,-5.498 -3.338,-5.498c0,0 -0.092,-0.23 0.006,-0.348c0.111,-0.13 0.41,-0.134 0.41,-0.134l2,-0.01c0,0 0.188,0.033 0.324,0.133c0.111,0.082 0.174,0.236 0.174,0.236c0,0 0.323,0.819 0.752,1.561c0.836,1.446 1.224,1.763 1.508,1.608c0.414,-0.226 0.29,-2.044 0.29,-2.044c0,0 0.008,-0.66 -0.208,-0.954c-0.168,-0.229 -0.484,-0.297 -0.622,-0.314c-0.113,-0.015 0.071,-0.277 0.311,-0.395c0.36,-0.176 0.996,-0.186 1.747,-0.179c0.585,0.006 0.754,0.042 0.982,0.098c0.69,0.167 0.456,0.811 0.456,2.356c0,0.495 -0.089,1.191 0.267,1.42c0.154,0.099 0.529,0.015 1.464,-1.579c0.445,-0.756 0.778,-1.644 0.778,-1.644c0,0 0.073,-0.158 0.186,-0.226c0.116,-0.07 0.272,-0.048 0.272,-0.048l2.105,-0.013c0,0 0.632,-0.076 0.735,0.211c0.108,0.3 -0.236,1.001 -1.096,2.148c-1.412,1.884 -1.569,1.709 -0.396,2.799c1.12,1.041 1.351,1.547 1.39,1.611c0.463,0.771 -0.515,0.832 -0.515,0.832z"></path></g></g>
-            </svg>
-        </a>
-    </div>
-</section>
-
-
-<footer class="text-center py-10 text-gray-500 text-sm border-t border-gray-800">
-    © 2025 ComorDev • Связь: <a href="mailto:comordev@gmail.com" class="underline hover:text-cyan-400">comordev@gmail.com</a>
-</footer>
-
-<script>
-    const translations = {
-        ru: {
-            about: "Обо мне",
-            experience: "Опыт",
-            projects: "Проекты",
-            greeting: "Привет! Я Василий 👋",
-            description: "PHP-разработчик с опытом коммерческой разработки с 2021 года. Специализируюсь на Laravel, Yii2, OpenCart, Bitrix и Telegram-ботах. Реализовал десятки проектов: от интернет-магазинов и админок до интеграций с платёжными системами, API и Telegram. Также работаю с C++, Java, Go, C# и занимаюсь Minecraft-моддингом. Люблю автоматизацию, стабильность и нестандартные задачи.",
-            view_projects: "Смотреть проекты",
-            experience_title: "💼 Опыт работы",
-
-            exp_freelance_title: "Фриланс",
-            exp_freelance_text: "Начал работать во фрилансе с 2021 года на Хабр.Фриланс и WebLancer. Разрабатывал разнообразные проекты с упором на автоматизацию и интеграции.",
-
-            exp_moneyhand_title: "MoneyHand — криптобот",
-            exp_moneyhand_text: "Дорабатывал и исправлял баги Telegram-бота для криптообмена. Сделал полную автоматизацию: прием платежей и отправка крипты клиенту. Стек: PHP + Laravel + MySQL + Telegram API + CoinBase.",
-
-            exp_ameoli_title: "AmeOli — ИТ в медицине",
-            exp_ameoli_text: "Работал над системой, создавал REST API для мобильных приложений и оптимизации медицинских процессов с анонимностью пациентов. Стек: PHP + Bitrix + MySQL + REST API",
-
-            exp_psyon_title: "PsyonClinic — психологический центр",
-            exp_psyon_text: "Разработал backend сайта для центра психологической помощи (тренинги, врач-психотерапевт, семейная терапия). Реализовал интеграции с Т-Банк для оплаты и с сервисом Klinikon (SQNS) для онлайн-записей. Стек: PHP + Laravel + MySQL.",
-
-            exp_puer_title: "SirPuer — чайный паб",
-            exp_puer_text: "Работал над сайтом: исправлял баги, подключал SSL-сертификаты, добавлял новый функционал и улучшал стабильность сайта. Стек: PHP + OpenCart + MySQL.",
-
-            exp_beauty_title: "BeautyAgent - онлайн-магазин косметики",
-            exp_beauty_text: "Разрабатывал и дорабатывал функционал интернет-магазина премиальной косметики, исправлял баги и улучшал стабильность сайта. Стек: PHP + OpenCart + MySQL.",
-
-            exp_leelo_title: "Leelo — онлайн-биржа",
-            exp_leelo_text: "Дорабатывал и исправлял ошибки на сайте онлайн-биржи. Улучшал стабильность и производительность проекта. Стек: PHP + MySQL.",
-
-            exp_vbbank_title: "VBBank — подбор кредитов",
-            exp_vbbank_text: "Работал над сайтом по подбору кредитов: добавлял новый функционал, улучшал SEO и исправлял баги. Стек: PHP + MySQL.",
-
-            exp_checker_title: "Checker — анализ товаров",
-            exp_checker_text: "Сервис для сбора, анализа и визуализации данных о товарах из интернет-магазинов. Исправлял баги, корректировал верстку. Разработка велась в команде (11 участников) в закрытом GitHub-репозитории. Стек: PHP + Yii2 + MySQL.",
-
-            exp_acnews_title: "ACNews — новости аквакультуры",
-            exp_acnews_text: "Сайт новостей о рынке и аквакультуре. Работал над доработкой и улучшением верстки (базовая верстка). Стек: PHP + 1C-Битрикс + MySQL.",
-
-            exp_invest_title: "Invest — инвестиционный портал",
-            exp_invest_text: "Разработал единую админ-панель для множества клиентских сайтов. Практически с 0 создал админку (была уже верстка и некоторые базовые роуты), улучшил производительность админки и обеспечил стабильную интеграцию между сервисами. Стек: php + laravel/yii2 + REST API + MySQL.",
-
-            exp_zebra_title: "QR Zebra — онлайн меню для ресторанов",
-            exp_zebra_text: "Дорабатывал сайт, исправлял баги и корректировал верстку в проекте. Работа велась в приватном GitHub-репозитории. Стек: PHP + Laravel + MySQL",
-
-            exp_facile_title: "Facile Monde — российская косметика",
-            exp_facile_text: "Переделывал модуль оплаты через CMS Djem. Стек: PHP + 1C-Битрикс + MySQL.",
-
-            exp_xenforo_title: "Парсер XenForo + Telegram",
-            exp_xenforo_text: "Реализовал парсинг форума на CMS XenForo и автоматическую отправку новых постов в Telegram-канал. Стек: PHP + MySQL + Telegram Bot API.",
-
-            exp_themoloko_title: "TheMoloko — сайт знакомств",
-            exp_themoloko_text: "Добавлял новый функционал, реализовал наложение водяного знака при загрузке фотографий. Также исправлял баги и корректировал верстку. Стек: PHP + GD2 + Laravel + MySQL.",
-
-            projects_title: "🚀 Мои проекты",
-
-            proj_bedwars_title: "BedWars на Minecraft Bukkit",
-            proj_bedwars_text: "С нуля разработал мини-игру BedWars на Java (Bukkit 1.8.9) с полной логикой игры: команды, генераторы ресурсов, разрушение кроватей, возрождения, победы и интерфейсы. Проект создавался для подачи в команду VimeWorld.",
-
-            proj_inventory_title: "Кастомный инвентарь на Forge",
-            proj_inventory_text: "Создал расширенный инвентарь для Minecraft Forge (приватный github репозиторий): другой UI/фон, переработка Forge-интерфейсов, реализован SharedItemStackHandler для общей обработки предметов. Глубокая кастомизация и доработка Forge-ядра.",
-
-            proj_bracket_title: "FastBracketCheck — быстрая проверка скобок",
-            proj_bracket_text: " FastBracketCheck — это высокопроизводительная PHP-библиотека для быстрой проверки корректности расстановки фигурных скобок {} в строке. Неважно, что находится внутри скобок — библиотека анализирует только правильность их открытия и закрытия.",
-
-            proj_crud_title: "LaravelQuickCRUD — лёгкая CRUD-система на Laravel",
-            proj_crud_text: "LaravelQuickCRUD — это демонстрационный проект, созданный как тестовое задание для устройства на работу. Он показывает мой уровень владения Laravel и понимание принципов ООП. Проект не предназначен для интеграции в реальные системы, а служит исключительно для оценки качества кода и архитектурных подходов.",
-
-            proj_dmm_title: "DMM — Декомпилятор Майнкрафт Модов",
-            proj_dmm_text: "DMM (Decompiler Minecraft Mods) — это инструмент на C++ для декомпиляции модов Minecraft. Он переводит обфусцированные имена переменных и функций в читаемый вид с помощью маппингов. Проект облегчает анализ модификаций и демонстрирует навыки работы с бинарными форматами, строковыми таблицами и низкоуровневой логикой.",
-
-            proj_mywast_title: "MyWast — уникальный игровой сервер Minecraft PE 1.1.5",
-            proj_mywast_text: "MyWast — это уникальный сервер Minecraft PE версии 1.1.5, в котором была реализована эксклюзивная система проигрывания музыки прямо из интернета — без использования нотных блоков или сторонних клиентов. Кроме того, на сервере была создана авторская horror-игра, вдохновлённая Murder Mystery, но с более напряжённой атмосферой: тёмный лес, звуки учащённого сердцебиения при приближении убийцы и множество геймплейных деталей. Проект демонстрирует креативный подход, глубокое понимание движка Minecraft PE и опыт реализации нестандартных игровых механик.",
-            
-            socials_title: "📱 Мои соц.сети"
-        },
-        en: {
-            about: "About",
-            experience: "Experience",
-            projects: "Projects",
-            greeting: "Hi! I'm Vasily 👋",
-            description: "PHP developer with commercial experience since 2021. Specialized in Laravel, Yii2, OpenCart, Bitrix, and Telegram bots. Built dozens of projects — from e-commerce and admin panels to payment integrations, APIs, and automation. Also familiar with C++, Java, Go, and C#. Passionate about stability, backend logic, and unique technical challenges, including Minecraft modding.",
-            view_projects: "View Projects",
-            experience_title: "💼 Work Experience",
-
-            exp_freelance_title: "Freelance",
-            exp_freelance_text: "Started freelancing in 2021 on Habr.Freelance and WebLancer. Developed various projects focusing on automation and integrations.",
-
-            exp_moneyhand_title: "MoneyHand — Crypto Bot",
-            exp_moneyhand_text: "Enhanced a Telegram crypto exchange bot to be fully automated: from payment processing to sending crypto to clients. Stack: PHP + Laravel + MySQL + Telegram API + CoinBase.",
-
-            exp_ameoli_title: "AmeOli — IT in Healthcare",
-            exp_ameoli_text: "Worked on a system. Created REST APIs for mobile apps and optimized medical processes while ensuring patient anonymity. Stack: PHP + Bitrix + MySQL + REST API",
-
-            exp_psyon_title: "PsyonClinic — Psychological Center",
-            exp_psyon_text: "Developed the backend for a mental health center's website (trainings, psychotherapist, family therapy). Integrated with Tinkoff for payments and Klinikon (SQNS) for online bookings. Stack: PHP + Laravel + MySQL.",
-
-            exp_puer_title: "SirPuer — Tea Pub",
-            exp_puer_text: "Worked on the website: fixed bugs, connected SSL certificates, added new features, and improved stability. Stack: PHP + OpenCart + MySQL.",
-
-            exp_beauty_title: "BeautyAgent — Cosmetics E-commerce",
-            exp_beauty_text: "Developed and refined functionality for a premium cosmetics online store, fixed bugs, and improved stability. Stack: PHP + OpenCart + MySQL.",
-
-            exp_leelo_title: "Leelo — Online Exchange",
-            exp_leelo_text: "Improved and fixed issues on an online exchange platform. Focused on stability and performance. Stack: PHP + MySQL.",
-
-            exp_vbbank_title: "VBBank — Loan Finder",
-            exp_vbbank_text: "Worked on a loan comparison site: added new features, improved SEO, and fixed bugs. Stack: PHP + MySQL.",
-
-            exp_checker_title: "Checker — Product Analysis",
-            exp_checker_text: "A service for collecting, analyzing, and visualizing product data from online stores. Fixed bugs and adjusted layout. Development was done in a team of 11 in a private GitHub repository. Stack: PHP + Yii2 + MySQL.",
-
-            exp_acnews_title: "ACNews — Aquaculture News",
-            exp_acnews_text: "News site about aquaculture and market updates. Worked on layout improvements. Stack: PHP + 1C-Bitrix + MySQL.",
-
-            exp_invest_title: "Invest — Investment Portal",
-            exp_invest_text: "Developed a unified admin panel for multiple client sites. Built almost from scratch (design and basic routes provided), improved performance and ensured stable integration between services. Stack: PHP + Laravel/Yii2 + REST API + MySQL.",
-
-            exp_zebra_title: "QR Zebra — Online Menu for Restaurants",
-            exp_zebra_text: "Enhanced the website, fixed bugs, and adjusted layout. Work was done in a private GitHub repository. Stack: PHP + Laravel + MySQL.",
-
-            exp_facile_title: "Facile Monde — Russian Cosmetics",
-            exp_facile_text: "Refactored the payment module via the DJEM CMS service. Stack: PHP + 1C-Bitrix + MySQL.",
-
-            exp_xenforo_title: "XenForo Parser + Telegram",
-            exp_xenforo_text: "Implemented forum parsing from XenForo CMS and automatic posting to a Telegram channel. Stack: PHP + MySQL + Telegram Bot API.",
-
-            exp_themoloko_title: "TheMoloko — Dating Website",
-            exp_themoloko_text: "Added new features, implemented photo watermarking on upload. Also fixed bugs and adjusted layout. Stack: PHP + GD2 + Laravel + MySQL.",
-
-            projects_title: "🚀 My Projects",
-
-            proj_bedwars_title: "BedWars on Minecraft Bukkit",
-            proj_bedwars_text: "Developed the BedWars minigame from scratch in Java (Bukkit 1.8.9) with complete game logic: teams, resource generators, bed destruction, respawning, win conditions, and interfaces. Created as a project for applying to the VimeWorld team.",
-
-            proj_inventory_title: "Custom Inventory on Forge",
-            proj_inventory_text: "Created an advanced inventory system for Minecraft Forge (private GitHub repository): custom UI/background, reworked Forge interfaces, implemented SharedItemStackHandler for unified item handling. Deep customization and Forge core improvements.",
-
-            proj_bracket_title: "FastBracketCheck — fast bracket validation",
-            proj_bracket_text: "FastBracketCheck is a high-performance PHP library for validating the correct nesting of curly braces {} in a string. It ignores the content inside and outside the braces — it simply checks for structural correctness.",
-
-            proj_crud_title: "LaravelQuickCRUD — lightweight CRUD system for Laravel",
-            proj_crud_text: "LaravelQuickCRUD is a demo project created as a test task for a job application. It demonstrates my proficiency with Laravel and understanding of object-oriented programming principles. The project is not intended for integration into production systems and is meant solely to showcase code quality and architectural approach.",
-
-            proj_dmm_title: "DMM — Decompiler Minecraft Mods",
-            proj_dmm_text: "DMM (Decompiler Minecraft Mods) is a C++ tool for decompiling Minecraft mods. It translates obfuscated variable and function names into readable form using mapping files. The project facilitates the analysis of mod code and demonstrates skills in working with binary formats, string tables, and low-level logic.",
-
-            proj_mywast_title: "MyWast — a unique Minecraft PE 1.1.5 game server",
-            proj_mywast_text: "MyWast is a one-of-a-kind Minecraft PE 1.1.5 server featuring a custom music playback system that streamed music directly from the internet — no note blocks, no mods, no external clients. The server also included an original horror minigame inspired by Murder Mystery, but with a darker and more immersive twist: a dense forest map, heartbeat sounds when the killer approaches, and many custom gameplay elements. This project showcases creativity, deep engine understanding, and the ability to implement unconventional mechanics within strict technical limits.",
-
-            socials_title: "📱 My Social Media"
-        }
-    };
-
-    function setLanguage(lang) {
-        document.querySelectorAll('[data-key]').forEach(el => {
-            const key = el.getAttribute('data-key');
-            if(translations[lang] && translations[lang][key]) {
-                el.textContent = translations[lang][key];
-            }
-        });
-        document.getElementById('lang-toggle').textContent = lang === 'ru' ? 'EN' : 'RU';
-        localStorage.setItem('site-lang', lang);
-    }
-
-    const savedLang = localStorage.getItem('site-lang') || 'ru';
-    setLanguage(savedLang);
-
-    document.getElementById('lang-toggle').addEventListener('click', () => {
-        const currentLang = localStorage.getItem('site-lang') || 'ru';
-        setLanguage(currentLang === 'ru' ? 'en' : 'ru');
-    });
-
-
-
-    ScrollReveal().reveal('section', {
-        distance: '50px',
-        duration: 800,
-        easing: 'ease-in-out',
-        origin: 'bottom',
-        interval: 200
-    });
-</script>
 </body>
 </html>

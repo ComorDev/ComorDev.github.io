@@ -3,446 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComorDev — Портфолио</title>
+    <title>COMORDEV — ¿Qué te trajo hasta aquí?</title>
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="ComorDev. ¿Qué te trajo hasta aquí?">
+    <meta name="trace-02" content="40.416616,-3.703788|0|UCXGFOWJ">
 
-    <script src="js/app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110473227', 'ym');
-    
-        ym(110473227, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/110473227" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    <script src="js/app.js" defer></script>
+    <script src="js/tubes-background.js" defer></script>
 </head>
 <body>
 
-    <header class="header">
-        <div class="header__container">
-            <div class="logo">
-                <a href="#" class="logo__link">Comor<span class="logo__accent">Dev</span></a>
-            </div>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#about" class="nav__link">Обо мне</a></li>
-                    <li class="nav__item"><a href="#project" class="nav__link">Проект</a></li>
-                    <li class="nav__item"><a href="#experience" class="nav__link">Опыт</a></li>
-                    <li class="nav__item"><a href="#projects" class="nav__link">Проекты</a></li>
-                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
-                </ul>
-            </nav>
-            <div class="header__actions">
-                <div class="lang-switcher">
-                    <span class="lang-switcher__item active">RU</span>
-                    <span class="lang-switcher__divider">/</span>
-                    <span class="lang-switcher__item">EN (недоступно)</span>
+    <div class="loader" id="site-loader">
+        <div class="loader-c">
+            <div class="loader-spacer"></div>
+
+            <div class="loader-anim">
+                <span class="c-load" id="c-load">C</span>
+
+                <div class="loader-img-w" id="loader-portal">
+                    <img src="assets/images/loader/chrome_knot.webp" class="loader-img" alt="Chrome Knot">
+                    <img src="assets/images/loader/chrome_heart.webp" class="loader-img" alt="Chrome Heart">
+                    <img src="assets/images/loader/chrome_star.webp" class="loader-img" alt="Chrome Star">
+                    <img src="assets/images/loader/chrome_rose.webp" class="loader-img" alt="Chrome Rose">
+                    <img src="assets/images/loader/chrome_smiley.webp" class="loader-img" alt="Chrome Smiley">
+                    <img src="assets/images/loader/chrome_torus.webp" class="loader-img" alt="Chrome Torus">
+                    <img src="assets/images/loader/chrome_mercury.webp" class="loader-img" alt="Liquid Mercury">
+                    <img src="assets/images/loader/chrome_skull.webp" class="loader-img" alt="Chrome Skull">
                 </div>
+
+                <span class="dev-load" id="dev-load">DEV</span>
+            </div>
+
+            <div class="loader-nbr-w">
+                <div id="loader-num">100</div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="main-content">
-
-        <section class="hero-section">
-            <div class="hero-section__container">
-                <div class="hero-section__content">
-                    <span class="software-engineer-badge">SOFTWARE ENGINEER</span>
-                    <h1 class="hero-section__title">
-                        Строю продукты,
-                        <span class="text-gradient">решающие задачи бизнесов</span>
-                    </h1>
-                    <p class="hero-section__description">
-                        Разрабатываю масштабируемые системы, микросервисы и AI-решения.
-                        Сейчас работаю над собственным SaaS-продуктом <span class="text-cyan-link">EveningCity</span>
-                        — CRM для управления коммуникациями из всех мессенджеров в одном окне.
-                    </p>
-                    <div class="hero-section__actions">
-                        <a href="#project" class="btn btn--primary">Посмотреть проект &rarr;</a>
-                        <a href="#about" class="btn">Обо мне</a>
-                    </div>
-                </div>
-
-                <div class="hero-section__visual">
-                    <div class="mockup-perspective">
-                        <img src="assets/images/eveningcity_interface.png" alt="EveningCity Interface" class="mockup-image">
-                    </div>
-                </div>
+    <main class="site-content" id="main-content">
+        <footer class="empty-page" id="footer-scene">
+            <div class="paint-stage" aria-hidden="true">
+                <canvas class="tubes-canvas" id="tubes-canvas"></canvas>
+            </div>
+            <div class="page-header"><span class="wordmark">COMORDEV′</span></div>
+            <div class="empty-page__inner">
+                <h1 id="page-title" lang="es" aria-label="¿Qué te trajo hasta aquí?">
+                    <span class="title-copy title-copy--initial" aria-hidden="true">
+                        <span class="title-line">¿Qué te trajo</span>
+                        <span class="title-line title-line--italic">hasta aquí?</span>
+                    </span>
+                    <span class="title-copy title-copy--next" aria-hidden="true">
+                        <span class="title-line">¿Sigues aquí?</span>
+                        <span class="title-line title-line--italic">Vete.</span>
+                    </span>
+                </h1>
+            </div>
+            <a class="effect-credit" href="https://www.npmjs.com/package/threejs-components" target="_blank" rel="noopener noreferrer">Tubes Cursor · Kevin Levron · CC BY-NC-SA 4.0</a>
+        </footer>
+        <section class="cipher-scene" id="cipher-scene" aria-label="Зашифрованный адрес">
+            <div class="cipher-scene__inner">
+                <span class="cipher-scene__prefix">II → I</span>
+                <h2>
+                    <span>ГЬПНФСПФЪ,</span>
+                    <span>ОП АШЭЗЕИАЖНПЗ,</span>
+                    <span>ВЮ ЙШЮОЕФД</span>
+                    <span>ЮК ЙЩ ВЛПП</span>
+                </h2>
+                <span class="cipher-scene__coordinates">40.369712, −3.603490</span>
+                <span class="cipher-scene__alphabets">33 / 26</span>
             </div>
         </section>
-
-        <section id="project" class="featured-project-section">
-            <div class="featured-project-section__container">
-                <div class="project-card-main">
-                    <div class="project-card-main__info">
-                        <span class="section-label">Мой проект</span>
-                        <div class="project-card-main__title-row">
-                            <h2 class="project-card-main__title">EveningCity</h2>
-                            <span class="status-badge">In Progress</span>
-                        </div>
-                        <p class="project-card-main__description">
-                            Омниканальная CRM-система для бизнеса, которая объединяет Telegram, WhatsApp и другие каналы коммуникации в едином интерфейсе.
-                        </p>
-                        <div class="tech-tags" id="tech">
-                            <div class="tech-tag">
-                                <span class="tech-tag__icon tech-tag__icon--go"></span>
-                                <div class="tech-tag__text">
-                                    <span class="tech-tag__name">Go</span>
-                                    <span class="tech-tag__sub">Backend</span>
-                                </div>
-                            </div>
-                            <div class="tech-tag">
-                                <span class="tech-tag__icon tech-tag__icon--react"></span>
-                                <div class="tech-tag__text">
-                                    <span class="tech-tag__name">React</span>
-                                    <span class="tech-tag__sub">Frontend</span>
-                                </div>
-                            </div>
-                            <div class="tech-tag tech-tag--architecture">
-                                <span class="tech-tag__icon tech-tag__icon--microservices"></span>
-                                <div class="tech-tag__text">
-                                    <span class="tech-tag__name">Микросервисная</span>
-                                    <span class="tech-tag__sub">архитектура</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card-main__links">
-                            <a href="https://eveningcity.com" class="link-arrow">Подробнее о проекте <span class="link-arrow__icon">&rarr;</span></a>
-                        </div>
-                    </div>
-
-                    <div class="project-card-main__diagram">
-                        <div class="diagram-column diagram-column--channels">
-                            <span class="diagram-column__title">Каналы</span>
-                            <div class="diagram-icon diagram-icon--telegram"></div>
-                            <div class="diagram-icon diagram-icon--whatsapp"></div>
-                            <div class="diagram-icon diagram-icon--viber"></div>
-                            <div class="diagram-dots">...</div>
-                        </div>
-
-                        <div class="diagram-arrows-left"></div>
-
-                        <div class="diagram-column diagram-column--platform">
-                            <span class="diagram-column__title">EveningCity Platform</span>
-                            <div class="diagram-block diagram-block--gateway">API Gateway</div>
-                            <div class="diagram-row">
-                                <div class="diagram-block diagram-block--sub">Auth Service</div>
-                                <div class="diagram-block diagram-block--sub">Audit Service</div>
-                            </div>
-                            <div class="diagram-row">
-                                <div class="diagram-block diagram-block--sub">User Service</div>
-                                <div class="diagram-block diagram-block--sub">Message Service</div>
-                            </div>
-                            <div class="diagram-row">
-                                <div class="diagram-block diagram-block--sub">Analytics Service</div>
-                            </div>
-                            <div class="diagram-block diagram-block--storage">Storage</div>
-                        </div>
-
-                        <div class="diagram-arrows-right"></div>
-
-                        <div class="diagram-column diagram-column--clients">
-                            <span class="diagram-column__title">Клиенты</span>
-                            <div class="diagram-client-item">
-                                <span class="diagram-client-icon diagram-client-icon--web"></span>
-                                <span class="diagram-client-text">Web</span>
-                            </div>
-                            <div class="diagram-client-item">
-                                <span class="diagram-client-icon diagram-client-icon--mobile"></span>
-                                <span class="diagram-client-text">Mobile</span>
-                            </div>
-                            <div class="diagram-dots">...</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="history-section">
-            <div class="history-section__container">
-                <div class="history-section__content">
-                    <span class="section-label">Моя история</span>
-                    <h2 class="history-section__title">Путь длиною<br><span class="text-cyan">в код</span></h2>
-                    <div class="history-section__text">
-                        <p>Я начал программировать в 11 лет.</p>
-                        <p>Всё началось в Minecraft: я хотел играть с читами, притворяясь игроком ПК, но у меня не было компьютера. Любопытство привело меня к изучению плагинов, а затем — к созданию собственных. Я начал продавать их владельцам серверов.</p>
-                        <p>Так хобби превратилось в дело жизни.</p>
-                    </div>
-                </div>
-                <div class="history-section__illustration">
-                </div>
-            </div>
-        </section>
-
-        <section class="focus-section">
-            <div class="focus-section__container">
-                <h2 class="focus-section__title">Чем я занимаюсь сейчас</h2>
-                <div class="focus-grid">
-                    <div class="focus-card">
-                        <div class="focus-card__icon focus-card__icon--crm"></div>
-                        <p class="focus-card__text">Разрабатываю EveningCity — CRM на Go и React</p>
-                    </div>
-                    <div class="focus-card">
-                        <div class="focus-card__icon focus-card__icon--arch"></div>
-                        <p class="focus-card__text">Проектирую микросервисную архитектуру</p>
-                    </div>
-                    <div class="focus-card">
-                        <div class="focus-card__icon focus-card__icon--ai"></div>
-                        <p class="focus-card__text">Интегрирую AI и создаю умные автоматизации</p>
-                    </div>
-                    <div class="focus-card">
-                        <div class="focus-card__icon focus-card__icon--sys"></div>
-                        <p class="focus-card__text">Создаю системы, которые экономят время и увеличивают прибыль</p>
-                    </div>
-                    <div class="focus-card">
-                        <div class="focus-card__icon focus-card__icon--launch"></div>
-                        <p class="focus-card__text">Готовлю продукт к коммерческому запуску</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="timeline-section">
-            <div class="timeline-section__container">
-                <span class="section-label">Опыт</span>
-                <div class="timeline">
-                    <div class="timeline__line"></div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <span class="timeline__year">2018</span>
-                        <h3 class="timeline__title">Начало пути</h3>
-                        <p class="timeline__description">Знакомство с программированием через Minecraft. Изучил устройство серверов, писал и продавал собственные плагины с целью создавать полезные продукты.</p>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <span class="timeline__year">2021</span>
-                        <h3 class="timeline__title">Первый коммерческий опыт</h3>
-                        <p class="timeline__description">Успешно сдал фриланс-заказ на незнакомом фреймворке, работая только с ТЗ и документацией. Закрепил навык быстрого освоения технологий.</p>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <span class="timeline__year">2022–2024</span>
-                        <h3 class="timeline__title">Годы практики</h3>
-                        <p class="timeline__description">Коммерческая разработка в разных сферах. Частая смена требований сформировала принцип: уметь находить решения за пределами привычного стека.</p>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <span class="timeline__year">2025</span>
-                        <h3 class="timeline__title">Переломный момент</h3>
-                        <p class="timeline__description">Старт совместного продукта, завершившийся уходом партнера. Принял решение строить проект самостоятельно, полностью отвечая за архитектуру.</p>
-                    </div>
-
-                    <div class="timeline__item">
-                        <div class="timeline__dot"></div>
-                        <span class="timeline__year">Сейчас</span>
-                        <h3 class="timeline__title">EveningCity</h3>
-                        <p class="timeline__description">Фокус на омниканальной CRM-платформе с микросервисной архитектурой. Идёт подготовка к коммерческому запуску и привлечению первых клиентов.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects-section">
-            <div class="projects-section__container">
-                <span class="section-label">Проекты</span>
-
-                <div class="projects-layout">
-                    <div class="projects-featured">
-
-                        <div class="project-card">
-                            <div class="project-card__preview img-placeholder-dmm"></div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">DMM</h3>
-                                <p class="project-card__meta">Decompiler Minecraft Mods</p>
-                                <p class="project-card__tech">C++ / Reverse Engineering / Binary</p>
-                                <p class="project-card__desc">Инструмент для декомпиляции обфусцированных модов. Перевод имен переменных и функций в читаемый вид через маппинги.</p>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-card__preview img-placeholder-mywast"></div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">MyWast Network</h3>
-                                <p class="project-card__meta">Кастомное ядро сервера (1.1.5)</p>
-                                <p class="project-card__tech">PHP / Java / Game Logic</p>
-                                <p class="project-card__desc">Реализация эксклюзивной системы стриминга музыки из интернета в клиент игры и авторских horror-механик.</p>
-                                <a href="https://vk.com/mywast" class="project-card__link">Подробнее &rarr;</a>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <div class="project-card__preview img-placeholder-moneyhand"></div>
-                            <div class="project-card__content">
-                                <h3 class="project-card__title">MoneyHand</h3>
-                                <p class="project-card__meta">Криптообменник</p>
-                                <p class="project-card__tech">Laravel / CoinBase API / Telegram Bot</p>
-                                <p class="project-card__desc">Автоматизированная платформа для обмена криптовалют с интеграцией платежных шлюзов и Telegram-интерфейсом для управления сделками.</p>
-                                <a href="https://t.me/MoneyHand_bot" target="_blank" class="project-card__link">Перейти &rarr;</a>
-                            </div>
-                        </div>
-
-                        <div class="project-card-more">
-                            <div class="project-card-more__icon"></div>
-                            <div class="project-card-more__content">
-                                <h3 class="project-card-more__title">Коммерческий опыт</h3>
-                                <p class="project-card-more__text">Десятки реализованных проектов: интернет-магазины, CRM, API-интеграции и боты.</p>
-                                <button id="open-projects-widget" class="btn btn--secondary btn--full-width">Посмотреть все проекты (15+)</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="all-projects-widget" id="projects-widget">
-                    <div class="all-projects-widget__header">
-                        <h3 class="all-projects-widget__title">Опыт и проекты</h3>
-                        <button class="all-projects-widget__close" id="close-projects-widget" aria-label="Закрыть">&times;</button>
-                    </div>
-                    <div class="all-projects-grid">
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://t.me/MoneyHand_bot" target="_blank" class="all-projects-item__link-inline">MoneyHand ↗</a></h4>
-                            <span class="all-projects-item__type">Криптообменник (Laravel + CoinBase)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://ameoli.ru" target="_blank" class="all-projects-item__link-inline">Ameoli ↗</a></h4>
-                            <span class="all-projects-item__type">ИТ в медицине (Bitrix + REST API)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://psyonclinic.ru" target="_blank" class="all-projects-item__link-inline">Psyon Clinic ↗</a></h4>
-                            <span class="all-projects-item__type">Сайт клиники (Laravel + Т-Банк)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://sirpuer.com" target="_blank" class="all-projects-item__link-inline">SirPuer ↗</a></h4>
-                            <span class="all-projects-item__type">Интернет-магазин чая (OpenCart)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://beautyagent.store" target="_blank" class="all-projects-item__link-inline">Beauty Agent ↗</a></h4>
-                            <span class="all-projects-item__type">Премиальная косметика (OpenCart)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://leelo.ru" target="_blank" class="all-projects-item__link-inline">Leelo ↗</a></h4>
-                            <span class="all-projects-item__type">Онлайн-биржа (PHP + MySQL)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://vbbank.ru" target="_blank" class="all-projects-item__link-inline">VB Bank ↗</a></h4>
-                            <span class="all-projects-item__type">Финансовый сервис</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://acnews.info" target="_blank" class="all-projects-item__link-inline">ACNews ↗</a></h4>
-                            <span class="all-projects-item__type">Новостной сайт (1С-Битрикс)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://qrzebra.uz" target="_blank" class="all-projects-item__link-inline">QR Zebra ↗</a></h4>
-                            <span class="all-projects-item__type">Онлайн-меню для ресторанов</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name"><a href="https://facilemonde.ru" target="_blank" class="all-projects-item__link-inline">Facile Monde ↗</a></h4>
-                            <span class="all-projects-item__type">Российская косметика</span>
-                        </div>
-
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name all-projects-item__name--plain">Checker</h4>
-                            <span class="all-projects-item__type">Анализ товаров (Yii2)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name all-projects-item__name--plain">Invest</h4>
-                            <span class="all-projects-item__type">Инвестиционный портал (Laravel/Yii2)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name all-projects-item__name--plain">TheMoloko</h4>
-                            <span class="all-projects-item__type">Сайт знакомств (Laravel + GD2)</span>
-                        </div>
-                        <div class="all-projects-item">
-                            <h4 class="all-projects-item__name all-projects-item__name--plain">Парсер XenForo</h4>
-                            <span class="all-projects-item__type">Интеграция с Telegram (PHP + Bot API)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="widget-overlay" id="widget-overlay"></div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="cta-section__container">
-                <div class="cta-card">
-                    <div class="cta-card__info">
-                        <h2 class="cta-card__title">Давайте создадим что-то крутое</h2>
-                        <p class="cta-card__subtitle">Открыт к интересным проектам и партнёрствам</p>
-                    </div>
-                    <a href="#contacts" class="btn btn--primary btn--cta">Связаться со мной &rarr;</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacts" class="contacts-section">
-            <div class="contacts-container">
-                <span class="section-label">Связь со мной</span>
-                <h2 class="section-title">Давайте обсудим проект</h2>
-
-                <div class="contacts-socials">
-                    <a href="https://t.me/comordev" target="_blank" class="social-link" title="Telegram">
-                        <svg viewBox="0 0 240 240" width="40" height="40"><defs><linearGradient id="tg-grad" x1="120" y1="240" x2="120" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1d93d2"/><stop offset="1" stop-color="#38b0e3"/></linearGradient></defs><circle cx="120" cy="120" r="120" fill="url(#tg-grad)"/><path d="M81.229,128.772l14.237,39.406s1.78,3.687,3.686,3.687,30.255-29.492,30.255-29.492l31.525-60.89L81.737,118.6Z" fill="#c8daea"/><path d="M100.106,138.878l-2.733,29.046s-1.144,8.9,7.754,0,17.415-15.763,17.415-15.763" fill="#a9c6d8"/><path d="M81.486,130.178,52.2,120.636s-3.5-1.42-2.373-4.64c.232-.664.7-1.229,2.1-2.2,6.489-4.523,120.106-45.36,120.106-45.36s3.208-1.081,5.1-.362a2.766,2.766,0,0,1,1.885,2.055,9.357,9.357,0,0,1,.254,2.585c-.009.752-.1,1.449-.169,2.542-.692,11.165-21.4,94.493-21.4,94.493s-1.239,4.876-5.678,5.043A8.13,8.13,0,0,1,146.1,172.5c-8.711-7.493-38.819-27.727-45.472-32.177a1.27,1.27,0,0,1-.546-.9c-.093-.469.417-1.05.417-1.05s52.426-46.6,53.821-51.492c.108-.379-.3-.566-.848-.4-3.482,1.281-63.844,39.4-70.506,43.607A3.21,3.21,0,0,1,81.486,130.178Z" fill="#fff"/></svg>
-                    </a>
-
-                    <a href="https://vk.com/quellmerens" target="_blank" class="social-link" title="VK">
-                        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 23.04C0 12.1788 0 6.74826 3.37413 3.37413C6.74826 0 12.1788 0 23.04 0H24.96C35.8212 0 41.2517 0 44.6259 3.37413C48 6.74826 48 12.1788 48 23.04V24.96C48 35.8212 48 41.2517 44.6259 44.6259C41.2517 48 35.8212 48 24.96 48H23.04C12.1788 48 6.74826 48 3.37413 44.6259C0 41.2517 0 35.8212 0 24.96V23.04Z" fill="#0077FF"/>
-                            <path d="M25.54 34.5801C14.6 34.5801 8.3601 27.0801 8.1001 14.6001H13.5801C13.7601 23.7601 17.8 27.6401 21 28.4401V14.6001H26.1602V22.5001C29.3202 22.1601 32.6398 18.5601 33.7598 14.6001H38.9199C38.0599 19.4801 34.4599 23.0801 31.8999 24.5601C34.4599 25.7601 38.5601 28.9001 40.1201 34.5801H34.4399C33.2199 30.7801 30.1802 27.8401 26.1602 27.4401V34.5801H25.54Z" fill="white"/>
-                        </svg>
-                    </a>
-
-                    <a href="https://github.com/ComorDev" target="_blank" class="social-link" title="GitHub">
-                        <svg viewBox="0 0 24 24" width="40" height="40" fill="white"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
     </main>
-
-    <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__brand-side">
-                <div class="logo">
-                    <a href="#" class="logo__link">Comor<span class="logo__accent">Dev</span></a>
-                </div>
-                <p class="footer__copyright">
-                    &copy; 2026 Василий Фирсов. Все права защищены.
-                </p>
-            </div>
-
-            <div class="footer__nav-columns">
-                <div class="footer-col">
-                    <h4 class="footer-col__title">Навигация</h4>
-                    <ul class="footer-col__list">
-                        <li><a href="#about">Обо мне</a></li>
-                        <li><a href="#project">Проект</a></li>
-                        <li><a href="#experience">Опыт</a></li>
-                        <li><a href="#projects">Проекты</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-col__title">Контакты</h4>
-                    <ul class="footer-col__list">
-                        <li><a href="https://t.me/comordev">Telegram</a></li>
-                        <li><a href="mailto:comordev@gmail.com">Email</a></li>
-                        <li><a href="https://github.com/ComorDev">GitHub</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 </body>
 </html>
